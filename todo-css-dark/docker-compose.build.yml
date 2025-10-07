@@ -1,0 +1,9 @@
+services:
+  todo-css-dark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: todo-css-dark
+    ports:
+      - "8085:80"
+    restart: unless-stopped

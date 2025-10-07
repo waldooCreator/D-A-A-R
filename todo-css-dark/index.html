@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ToDo — Dark CSS</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body class="body">
+    <header class="container header">
+      <div class="row between center-v">
+        <h1 class="title">
+          <span class="emerald">ToDo</span> Client
+          <span class="pill">CSS • Dark</span>
+        </h1>
+        <div class="row gap-8">
+          <button id="btnReload" class="btn btn-primary">Recargar</button>
+          <a class="btn btn-ghost" target="_blank"
+             href="https://todoapitest.juansegaliz.com/swagger/index.html">Swagger</a>
+        </div>
+      </div>
+      <p class="muted small">
+        API base: <code id="apiBaseCode" class="emerald"></code>
+      </p>
+    </header>
+
+    <main class="container grid-2 gap-24 pb-64">
+      <!-- LISTA -->
+      <section class="card">
+        <div class="row between center-v mb-12">
+          <h2 class="h2">Tareas</h2>
+          <div class="row gap-8">
+            <input id="searchInput" placeholder="Buscar..." class="input" />
+            <select id="filterSelect" class="input">
+              <option value="all">Todas</option>
+              <option value="open">Pendientes</option>
+              <option value="done">Completadas</option>
+            </select>
+          </div>
+        </div>
+        <ul id="todoList" class="list"></ul>
+        <p id="emptyState" class="center muted small hidden">No hay tareas.</p>
+      </section>
+
+      <!-- FORMULARIO -->
+      <section class="card">
+        <div class="row between center-v mb-12">
+          <h2 id="formTitle" class="h2">Nueva tarea</h2>
+          <button id="btnReset" class="btn btn-ghost">Limpiar</button>
+        </div>
+
+        <form id="todoForm" class="col gap-12">
+          <input type="hidden" id="todoId" />
+
+          <label class="col gap-4">
+            <span class="label">Título</span>
+            <input id="titleInput" required maxlength="120" class="input" placeholder="Ej: Comprar pan" />
+          </label>
+
+          <label class="col gap-4">
+            <span class="label">Descripción</span>
+            <textarea id="descInput" rows="4" required class="input" placeholder="Detalles de la tarea..."></textarea>
+          </label>
+
+          <div class="grid-2 gap-12">
+            <label class="col gap-4">
+              <span class="label">Prioridad</span>
+              <select id="prioInput" class="input">
+                <option value="1">1 (Alta)</option>
+                <option value="2" selected>2 (Media)</option>
+                <option value="3">3 (Baja)</option>
+              </select>
+            </label>
+
+            <label class="col gap-4">
+              <span class="label">Estado</span>
+              <select id="doneInput" class="input">
+                <option value="false">Pendiente</option>
+                <option value="true">Completada</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="row gap-8 pt-8">
+            <button type="submit" id="btnSave" class="btn btn-primary">Guardar</button>
+            <button type="button" id="btnCancelEdit" class="btn btn-ghost hidden">Cancelar edición</button>
+          </div>
+        </form>
+
+        <details class="details mt-16">
+          <summary>Depuración</summary>
+          <div class="col gap-8 mt-12">
+            <div class="row gap-8 center-v">
+              <span id="statusPill" class="status">status: –</span>
+              <span id="timing" class="muted small"></span>
+            </div>
+            <div>
+              <h3 class="h3">Respuesta</h3>
+              <pre id="output" class="pre">—</pre>
+            </div>
+            <div>
+              <h3 class="h3">cURL</h3>
+              <pre id="curl" class="pre">—</pre>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="container pb-40">
+      <p class="muted xsmall">Hecho con CSS puro. Tema negro con acentos verde esmeralda.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

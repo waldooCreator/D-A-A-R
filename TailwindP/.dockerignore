@@ -1,0 +1,6 @@
+.git
+node_modules
+.gitignore
+**/__pycache__/
+**/.DS_Store
+**/Thumbs.db

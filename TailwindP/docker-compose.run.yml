@@ -1,0 +1,7 @@
+services:
+  todo-tailwind-dark:
+    image: YOUR_DOCKERHUB_USERNAME/todo-tailwind-dark:latest
+    container_name: todo-tailwind-dark
+    ports:
+      - "8083:80"
+    restart: unless-stopped

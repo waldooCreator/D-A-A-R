@@ -1,0 +1,7 @@
+services:
+  todo-css-dark:
+    image: waldoocreator/todo-css-dark:latest
+    container_name: todo-css-dark
+    ports:
+      - "8085:80"
+    restart: unless-stopped

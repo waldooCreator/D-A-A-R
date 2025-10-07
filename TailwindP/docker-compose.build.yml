@@ -1,0 +1,9 @@
+services:
+  todo-tailwind-dark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: todo-tailwind-dark
+    ports:
+      - "8083:80"
+    restart: unless-stopped
