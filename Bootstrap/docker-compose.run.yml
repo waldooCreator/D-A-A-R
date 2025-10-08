@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  todo-bootstrap:
+    image: waldoocreator/todo-bootstrap:latest
+    container_name: todo-bootstrap
+    ports:
+      - "8084:80"
+    restart: unless-stopped
